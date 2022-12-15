@@ -1,6 +1,9 @@
-<pre></pre>
+
 <?php 
 require "database.php";
+
+session_start();
+
 if (!isset($_SESSION["user"])) {
   header("Location: login.php");
   return;
@@ -39,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 ?>
-</pre>
 
 <?php require "partials/header.php" ?>
 

@@ -1,4 +1,4 @@
-<pre></pre>
+
 <?php 
 require "database.php";
 
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
       ]);
       $statement = $conn-> prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
       $statement->bindParam(":email",$_POST["email"]);
-      $statement->exceute();
+      $statement->execute();
       $user = $statement->fetch(PDO::FETCH_ASSOC);
 
       session_start();
@@ -38,8 +38,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 ?>
-</pre>
-
 <?php require "partials/header.php" ?>
 <div class="container pt-5">
   <div class="row justify-content-center">

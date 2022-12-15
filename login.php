@@ -1,4 +1,4 @@
-<pre></pre>
+
 <?php 
 require "database.php";
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 ?>
-</pre>
+
 
 <?php require "partials/header.php" ?>
 <div class="container pt-5">
