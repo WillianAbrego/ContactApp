@@ -1,3 +1,18 @@
+<?php
+// $cookie_name = "use";
+// $cookie_value =[["navbar-light", "bg-light"],["bg-white"]];
+// setcookie($cookie_name, json_encode($cookie_value), time() + (86400 * 30), "/"); // 86400 = 1 day
+// $data = json_decode($_COOKIE['use'], true);
+// var_dump($data[1][0]);
+// die();
+if (!isset($_COOKIE["use"])) {
+$cookie_name = "use";
+$cookie_value =[["navbar-light", "bg-light"],["bg-white"]];
+setcookie($cookie_name, json_encode($cookie_value), time() + (86400 * 30), "/"); // 86400 = 1 day
+ 
+}
+$data = json_decode($_COOKIE['use'], true);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +41,7 @@
       <?php endif ?>
     <title>Contacts App</title>
   </head>
-  <body>
+  <body class="bg-white">
     
 <?php require "partials/navbar.php" ?>
 
@@ -48,5 +63,5 @@
     <?php unset($_SESSION["flash"]) ?>
   <?php endif ?>
 
-    <main>
+    <main class="bg-white">
       <!-- content here   -->

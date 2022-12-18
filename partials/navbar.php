@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<?php $data = json_decode($_COOKIE['use'], true);?>
+<nav class="navbar navbar-expand-lg <?=$data[0][0] ." " .$data[0][1]  ?>">
   <div class="container-fluid">
     <a class="navbar-brand font-weight-bold" href="index.php">
       <img class="mr-2" src="./static/img/logo.png" />
@@ -37,6 +38,13 @@
           </li>
           <?php endif ?>
         </ul>
+        <form method="POST" action="theme.php">
+        <div class="form-check form-switch">
+        <input class="form-check-input " name="check" type="checkbox" role="switch" id="flexSwitchCheckDefault" >
+        <input type="submit" name="formSubmit" value="Theme" />
+      </form>  
+      </div>
+      
         <?php if (isset($_SESSION["user"])): ?>
           <div class="p-2">
           <?=$_SESSION["user"]["email"] ?>
